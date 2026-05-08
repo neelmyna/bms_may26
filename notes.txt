@@ -1,0 +1,235 @@
+
+i++
+j--
+a[i] = b[j]
+b[j]++
+
+a[++i] = b[--j]++
+sum = x++ + ++x
+
+
+x = 10
+y = x
+
+Arithmatic operators:
++ - * // / % **
+
+2 ** 3 ** 3
+
+1. Python is Dynamically typed language
+2. Why there are no ++ and -- operators in Python ?
+3. how range function  works?
+4. Why in Python you have no function overloading?
+
+n = 12
+for i in range(n):
+	print(i)
+	i += 2
+
+range(n)
+range(m, n)
+range(m, n, i)
+range(n, m , -i)
+
+	
+0
+2
+4
+6
+8
+10
+
+len(var)
+name.count()
+
+(10, 20) open interval from 11 to 19
+[15, 30] closed interval   from 15 to 30
+(5, 45] left open     from 6 to 45
+[start, end)   range function
+
+for i in my_range(n):
+	print(i)
+	
+myRange()
+
+n = 20
+num = 20
+age = 20
+studentAge = 20
+
+notepad++
+git
+git desktop
+vs code
+python
+mysql
+
+Data Structures
+
+int num1 = 50, num2 = 80..............;
+
+int numbers[50];
+
+array [45, 'bmsce', 50.5]
+
+Data Structures in Python
+
+list: mutable, ordered
+class is the rules, solution, definitions
+
+
+Customer
+	id
+	name
+	dob
+	phoneNumber
+	email
+	address
+	adhaar
+	pan
+	
+BankAccount
+	id
+	customerId
+	accountNumber
+	balance
+	
+	createAccount()
+	retrieveAccount()
+	updateAccount()
+	deleteAccount()
+	listAccounts()
+	
+	freezeAccount()
+	
+Transaction
+
+list
+	array
+	append()
+	extend()
+	pop()
+	insert()
+	sort()
+
+https://github.com/neelmyna/bms_may26
+
+git commands:
+
+1. configuration
+	git config --global user.name "neelmyna"
+	git config --global user.email "abcd@gmail.com"
+
+2. Copy (clone)
+	git clone https://github.com/neelmyna/bms_may26
+The above command will connect to internet and copy the repo folder from the github(server) into our system (laptop). So we should be seeing a folder by the name of the repo.
+
+
+git clone repo_url
+git clone https://github.com/username/repo_name
+
+git clone https://PAT@github.com/username/repo_name
+
+khjg359pqytihgfjhgkdfjjklsv
+
+git clone https://khjg359pqytihgfjhgkdfjjklsv@github.com/neelmyna/bms_may26
+
+create github account
+create new repo (public)
+create PAT and save it
+configuration 2 commands
+clone the repo
+clone the repo with PAT
+
+PUSH and PULL
+push is to copy the files and folders from local repo to remote repo
+PULL is the opposite of PUSH
+
+Push:
+	listing the files and folders ()
+	create the commit object with necessary messages
+	push
+	
+Remember, each commit is a version.
+Its not necessary to push every commit. We can push multiple commits at a time.
+
+In our repo folder these are content:	
+30 old (not modified) + 15 new (5 each in a sub folder, such 2 sub-folders) + 2 del (5 to be ignored)
+
+Git will list these:
+	10 new files
+	2 deleted files
+------------------------------------------
+Analysing the Linear Search Algorithm.
+
+The solution for Linear Search is Brute Force Technique.
+Brute Force is the technique that come usually naturally without having to apply any specific Math rule or formulea.
+Thus there is no inventor or author for these solutions.
+
+The best case scenario is when the element is found at index zero.
+Thus there would only one search.
+Thus the BCE (best case efficiency) of Linear Search is O(1)  Read it as: Big-Oh of One
+
+If in case the element is not found or it is found at the last possible index (last position) then it is the Worst case scenario and thus the WCE would be O(n) Where 'n' is size of the list.
+
+If in case the element is found some where at the mid of the list, then can coin the term Avg Case Efficiency and that would be O(n)
+
+Characteristics of Big-Oh:
+1. It is used usually to find WCE. However, we can also find the other 2.
+2. The Big-Oh always depends on the i/p size and gives the efficiency in order of the i/p size, say 'n'.
+3. The Big-Oh is here to tell us the Order in which the algorithm is. It's duty is Not to give the exact efficiency of the algorithm.
+4. The Big-Oh gives the efficiency in terms of 'n'
+5. The Big-Oh uses the Math functions such as factorial, logarthimic, sq-root etc.
+--------------------------------------------
+BINARY SEARCH:
+
+Strategy: Divide and Conquer
+What it is used for: To search an element in a list (An array and not a linked list)
+Pre-requisite: It expects the List to be sorted fully
+Solution/Algorithm:
+	Go to mid element of the list and check if it is the search
+	If yes,
+		then the search can stopped
+	If not, 
+		then check if the element is less than the mid element (i.e. if the element is in 1st half od the list)
+		if yes,
+			then set the search area to 1st half of the list
+		if not,
+			set the search area to the 2nd half
+	Repeat the above steps until at least one element is left
+
+Pseducode:
+	do this:
+		mid_position = (1st position + last position) // 2
+		if element == list[mid_position] then
+			stop the search and if you wish, return mid_position
+		else
+			if element < list[mid_position] then
+				list = 1st half of list
+			else:
+				list = 2nd half of list
+
+Code:
+
+
+Analyse the efficiencies:
+
+
+Think Optimisation:
+
+
+Conclude/Infer:
+----------------------------------------
+UNDERSTANDING COMMAND LINE ARGUMENTS:
+
+import sys
+
+print(type(sys.argv))
+print(sys.argv)
+print(sys.argv[0])
+print(sys.argv[1])
+print(sys.argv[2])
+print(type(sys.argv[2]))
+print(sys.argv[22])
+---------------------------------------------
+
