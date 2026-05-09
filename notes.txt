@@ -174,7 +174,7 @@ If in case the element is not found or it is found at the last possible index (l
 
 If in case the element is found some where at the mid of the list, then can coin the term Avg Case Efficiency and that would be O(n)
 
-Characteristics of Big-Oh:
+CHARACTERISTICS OF BIG-OH:
 1. It is used usually to find WCE. However, we can also find the other 2.
 2. The Big-Oh always depends on the i/p size and gives the efficiency in order of the i/p size, say 'n'.
 3. The Big-Oh is here to tell us the Order in which the algorithm is. It's duty is Not to give the exact efficiency of the algorithm.
@@ -213,6 +213,10 @@ Code:
 
 
 Analyse the efficiencies:
+BCE is O(1)
+WCE is 
+
+
 
 
 Think Optimisation:
@@ -232,4 +236,73 @@ print(sys.argv[2])
 print(type(sys.argv[2]))
 print(sys.argv[22])
 ---------------------------------------------
+Assume number of iterations of the while loop is X
+
+n    n/2     n/4  ........   8      4      2     1
+2(X-1)                      2(3)    2(2)  2(1)  2(0)
+
+2 pow (X-1) = n
+2 pow X = n
+X = O(Log N)
+
+100000		1
+50000		2
+25000		3
+12500		4
+6250		5
+3125		6
+1562		7
+781			8
+390			9
+195			10
+97			11
+48			12
+24			13
+12			14
+6			15
+3			16
+1			17
+-------------------------------------------------
+Brute Force: Bubble sort, selection sort
+Decrease and Conquer: Insertion sort
+Divide and Conquer: Merge sort, quick sort
+Tree Based Sorting: BBST sort, heap sort
+Combination of algorithms Sorting: Bucket Sort
+Non comparitive sorting: Radix Sort
+
+Bubble Sort
+
+77   34   55   45    9   13   22   35
+34   55   45    9   13   22   35   77
+34   45    9   13   22   35   55   77
+
+n-1 + n-2 + n-3 .... 3 + 2 + 1
+O(n2)
+
+9   12   22   34   35   45   55   77
+9   12   22   34   35   45   55   77
+
+O(n2)
+
+Pseudocode:
+for i from 0 to n-2 do:
+	for j from 0 to n-2-i do:
+		if list[j] > list[j+1]:
+			swap list[j], list[j+1]
+
+BCE O(n2)
+WCE O(n2)
+
+for i from 0 to n-2 do:
+	sorted = true  # assume the list is sorted
+	for j from 0 to n-2-i do:
+		if list[j] > list[j+1]:
+			swap list[j], list[j+1]
+			sorted = false
+	if sorted:
+		break
+
+BCE O(n)
+WCE O(n2)
+
 
