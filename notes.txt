@@ -304,5 +304,77 @@ for i from 0 to n-2 do:
 
 BCE O(n)
 WCE O(n2)
+------------------------------------------------
+Insertion Sort:
+
+77   34   55   45    9   13   22   35   99
+34   77
+34   55   77
+34   45   55   77
+ 9   34   45   55   77
+ 9   13   22   34   35   45   55   77
+ 
+for i in range(n):
+	element = numbers[i]
+	j = i - 1
+	while j >= 0 and element < numbers[j]:
+		numbers[j+1] = numbers[j]
+		j -= 1
+	numbers[j+1] = element
+	
+9   13   22   34   35   45   55   77
+9   13   22   34   35
+
+BCE of Insertion sort is O(n)
+
+9   13   22   34   35   45   55   77
+9
+13   9
+22  13    9
+
+WCE of Insertion sort is O(n2)
+
+-----------------------------------------------
+SELECTION SORT:
+
+9   13   55   45    77   34   22   35   99
+
+element = 13
+index = 5
+
+ALGORITHM:
+	How the algorithm works
+	What strategy it uses
+	Write the algorithm
+	Psedocode
+	Check the flow (flow chart)
+	Code
+	Discuss Efficiencies
+	Optimization
+	Application (where to use and where and when not to use)
+	Industry use
+----------------------------------------------------
+Tisha went to her orchard and plucked a bunch of oranges. Now she wants to keep aside some of the oranges to for herself and her children but also sell the biggest ones on the market. She takes a look at the last orange in her hand and decides that she would like to eat it. She seems to think it fair that all the oranges smaller than the orange in her hand can go to her children. All the oranges bigger than this one will be sold on the market. Write a program to help Tisha do this partition. Assume the oranges are neatly stacked in a row.
+
+numbers = []
+pivot = numbers[-1]
+i = 0   # to access each element of the list
+j = 0 # to know/find the index of the pivot element
+
+for i in range(len(numbers)-1):
+	if numbers[i] < pivot:
+		numbers[i], numbers[j] = numbers[j] numbers[i]
+		j += 1
+numbers[-1], numbers[j] = numbers[j] numbers[-1]
+
+The Partition if partitions the array in 2 equal halves then the further number of calls to the partition algorithm would be lesser.
+
+Contrarily, if we are taking the worst case scenario (where we sorting the rray in opposite order) then the number of partitions would linearly grow/increase.
+
+Partition has already a fixed efficiency of O(n)
+The increase in call to the partition() would increase the effic of quick_sort() from Log(n) to 'n'
+
+Thus, the WCE of Quick sort is O(n2)
+
 
 
