@@ -419,22 +419,52 @@ PSEUDOCODE:
 def divide_array(numbers, low, high):
 	if low < high:
 		mid = (low + high) // 2
-		divide_array(low, mid-1)
-		divide_array(mid+1, high)
+		divide_array(numbers, low, mid-1)
+		divide_array(numbers, mid+1, high)
 		merge(numbers[low:mid+1], numbers[mid+1:]) 
 
 def merge(array_a, array_b):
 	merged_array = []
-	i = j = k = 0
+	i = j = 0
 	while i < len(array_a) and j < len(array_b):
 		if array_a[i] < array_b[j]:
-			merged_array[k] = array_a[i]
+			merged_array.append(array_a[i])
 			i += 1
 		else:
-			merged_array[k] = array_b[j]
+			merged_array.append(array_b[j])
 			j += 1
-		k += 1
-	merged_array[k:] = array_a[i:]
-	merged_array[k:] = array_b[j:]
-	
-	
+	merged_array.extend(array_a[i:])
+	merged_array.extend(array_b[j:])
+
+with open(file_name, in_mode) as fp:
+	do the things here
+---------------------------------------------
+TREE
+* A Tree is non-linear DS
+* A Tree is acyclic DS
+* A Tree has one entry point namely ROOT
+* The data in a Tree is stored in its NODES
+* The Nodes in the tree are connected
+* The Root is also a Node
+* From a Node the nodes we can reach immediately (because they are connected, say, via an edge) are called as child nodes. A node in a tree can have any number of child nodes including zero.
+* A Node with zero child nodes is said to be LEAF Node or Brahmachari Node.
+* When we reach a child node from the current node, it is said to ASCEND the Tree once.
+* Since we have the terminology Child Node, the PARENT node is best possible term.
+* The Root is said to be at a level 1 and its immediate child at level 2 and so on.
+* The connected edges from the node we start ascending towards the node we have reached is said to be a PATH in the TREE.
+* Thus, level of the leaf node in a PATH is the HEIGHT of that Path in the Tree.
+*  The level of the leaf node in the longest path is the HEIGHT of the tree.
+* Synonym for Level is DEPTH.
+*** Height of a node in a tree is the height of the path from it to the leaf node.
+* All paths in the Tree are unique! Because the tree is acyclic(heirarchical).
+* If in Tree, every node have at most 2 child nodes then such a tree is said to be BINARY TREE (BT)
+* For a given BT of height N, the maximum number of nodes of the tree is (2 pow n) - 1  (Note that is an Odd number). Only the level 1 has odd number of nodes, which is the Root itself.
+* In a BT, if the number of nodes is exactly 2powN - 1, then it is said to be COMPLETE BT.
+* If in a BT, all the nodes have exactly 0 or 2 child nodes (only), then such BT is said to be STRICTLY BT.
+* Since in BT every node can have at most 2 nodes, we can name them as LEFT CHILD NODE and RIGHT CHILD NODE.
+* The Tree which ascends through (passes through) the left child node is said to be LEFT SUB TREE and thus we have RIGHT SUB TREE.
+*** If in a BT, the nodes are ARRANGED in such a way that the data in every node is greater than the data in its left child node and less than the data in its right child node, then such a BT is said to be BINARY SEARCH TREE (BST).
+* A BT or BST is said to be BALANCED, if the diffrence between the left sub tree height and the right sub tree height is nearly zero. In other words if the BT has nodes which is nearer to 2powN-1 then the BT is said be balanced.
+* In a BST if at all levels, the tree is balanced, then any of the CRUD operations (expect the delete) has an efficiency of O(LogN)
+* If in a BST if all nodes have only left child nodes or only right child nodes, then the efficiency of any of the CRUD operations is O(n) which is the worst case efficiency for a BST.
+
