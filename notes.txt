@@ -374,7 +374,67 @@ Contrarily, if we are taking the worst case scenario (where we sorting the rray 
 Partition has already a fixed efficiency of O(n)
 The increase in call to the partition() would increase the effic of quick_sort() from Log(n) to 'n'
 
-Thus, the WCE of Quick sort is O(n2)
+Thus, the WCE of Quick sort is O(n²)
+------------------------------------------
+DAY7 13-05-2026 WEDNESDAY
+
+MERGE SORT:
+STRATEGY: Divide and Conquer
+
+DIVIDE STEP: Divide the given array recursively into smallest possible chunks of arrays
+
+CONQUER STEP: Merge the arrays RECURSIVELY and during the merge, compare and then add element from the arrays to be merged, say A and B into the merged array, say C.
+
+divide algorithm and merge algorithm
+
+77  34  55  45  9  13  22  35  99
+77  34  55  45       9  13  22  35  99
+77  34      55  45       9  13  22  35  99
+77      34      55  45       9  13  22  35  99
+77      34      55       45       9  13  22  35  99
+77      34      55       45       9  13      22  35  99
+77     34     55      45     9     13      22  35  99
+77     34     55      45     9     13      22      35  99
+77     34     55      45     9     13      22      35     99
+                                            
+
+34    77       45    55      9    13       22    35      99
+                                  
+
+34  45   55   77     9   13   22   35          99
+
+9   13    22   34   35   45    55   77       99
+i											  j
+
+9   13    22   34   35   45    55   77   99
+k
+
+BCE nlogn
+WCE nlogn
+
+stable sorting technique
 
 
+PSEUDOCODE:
+def divide_array(numbers, low, high):
+	if low < high:
+		mid = (low + high) // 2
+		divide_array(low, mid-1)
+		divide_array(mid+1, high)
+		merge(numbers[low:mid+1], numbers[mid+1:]) 
 
+def merge(array_a, array_b):
+	merged_array = []
+	i = j = k = 0
+	while i < len(array_a) and j < len(array_b):
+		if array_a[i] < array_b[j]:
+			merged_array[k] = array_a[i]
+			i += 1
+		else:
+			merged_array[k] = array_b[j]
+			j += 1
+		k += 1
+	merged_array[k:] = array_a[i:]
+	merged_array[k:] = array_b[j:]
+	
+	
