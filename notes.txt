@@ -467,4 +467,48 @@ TREE
 * A BT or BST is said to be BALANCED, if the diffrence between the left sub tree height and the right sub tree height is nearly zero. In other words if the BT has nodes which is nearer to 2powN-1 then the BT is said be balanced.
 * In a BST if at all levels, the tree is balanced, then any of the CRUD operations (expect the delete) has an efficiency of O(LogN)
 * If in a BST if all nodes have only left child nodes or only right child nodes, then the efficiency of any of the CRUD operations is O(n) which is the worst case efficiency for a BST.
+* We can traverse a BSTR in 3 diffrent order.
+	1. Inorder traversal (LR'R): Access the left child then the root and lastly the right child. This must be recursively done with every new node we access.
+	2. Pre-Order (R'LR): Access the root then the left and lastly the right
+	3. PostOrder (LRR'): Left then right and lastly Root
+* If any of the 2 traversals are given, we can build the BST:
+	1. Inorder and pre-order
+	2. InOrder and PostOrder
+----------------------------------------------
+Linked List:
+Linear Linked lists:
+	1. Singly LL (straight chain, circular)
+	2. Doubly LL
+
+Problems we can solve on SLL/DLL:
+1. Sort the linked list (Bubble sort)
+2. Reverse a singly linked list (1. iteratively 2. recursively)
+3. Check if 2 linked lists converge at some point of time
+4. Merge 2 sorted linked lists into a one sorted list.
+5. Break a linked list into w of even and odd elements.
+6. Implement the following operations on a singly linked list:
+ 1. Insert at front
+ 2. insert at rear
+ 3. insert at position
+ 4. Delete from position
+ 5. Delete from front
+ 6. Delete from rear
+ 7. Traverse Singly linked list forward (front to towards rear)
+ 8. Diaplay nodes of Singly linked list backwards (rear to front)
+-----------------------------------------------------
+Operations on BST:
+
+Adding a new node:
+We always a new node as leaf node.
+
+Write Menu driven program to implement inserte, update and search and list elements of a BST.
+
+There are 2 types of relationships
+1. Generalisation (Inheritance)
+	is-a relationship or type-of relationship
+2. Association (we associate one object with other)
+	has-a or part-of relationship
+	Container containee relationship
+	1. Composition (strong association)
+	2. Aggreggation (weak association)
 
